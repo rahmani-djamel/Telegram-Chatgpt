@@ -14,20 +14,27 @@ class Index extends Controller
 
         $chat_id = $request->message['from']['id'];
         $reply_to_message = $request->message['message_id'];
+        $text = $request->message['text'];
+        $username = $request->message['from']['username'];
+
 
         // first welcome message if it's first time
         //if chat is photo  -> extract text from photo
         //else default message
 
         if (!cache()->has("chat_id_{$chat_id}")) {
-            $text = "Welcome to my bot";
+            $text = "Welcome to my bot".$username;
             cache()->put("chat_id_{$chat_id}",true,now()->addMinutes(60));
             # code...
         } elseif (1 == 2) {
             # code...
         }else{
 
-            $text = "how i can help you";
+           $text = "how i can help you ".$username." ".$text;
+           $text =  app('chatgpt')->AskQuestion($text,$chat_id,$reply_to_message);
+           $text = $text['data']['choices'][0]['message']['content'];
+
+
 
         }
 
