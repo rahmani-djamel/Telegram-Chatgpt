@@ -30,7 +30,7 @@ class Index extends Controller
             # code...
         }else{
 
-           $text = "how i can help you ".$username." ".$text;
+          // $text = "how i can help you ".$username." ".$text;
            $text =  app('chatgpt')->AskQuestion($text,$chat_id,$reply_to_message);
            $text = $text['data']['choices'][0]['message']['content'];
 
