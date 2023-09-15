@@ -38,6 +38,7 @@ return [
             'commands' => [
                 //Acme\Project\Commands\MyTelegramBot\BotCommand::class
             ],
+            
         ],
 
         //        'mySecondBot' => [
