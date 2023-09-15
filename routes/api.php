@@ -25,3 +25,4 @@ Route::prefix('telegram/webhook')->group(function() {
 });
 
 
+//https://api.telegram.org/bot6447220916:AAG6O9e65oyIzkEZiwZnFmt13cZZWnKZN1k/setWebhook?url=https://e136-41-107-83-33.ngrok-free.app/api/telegram/webhook/inbound

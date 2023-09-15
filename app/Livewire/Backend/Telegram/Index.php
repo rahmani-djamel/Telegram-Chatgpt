@@ -8,7 +8,7 @@ use Telegram\Bot\Laravel\Facades\Telegram;
 class Index extends Component
 {
     public function mount()
-    {
+    {/*
         $updates = Telegram::getUpdates();
       //  dd($updates);
         $bot = Telegram::getMe();
@@ -21,7 +21,18 @@ class Index extends Component
             'chat_id' => '-1001539969585',
             'parse_mode' => 'HTML',
             'text' => $text
-        ]);
+        ]);*/
+
+        $text = "how i can help you ";
+
+
+    $result = app('telegram_bot')->covertTextToVoice($text);
+  
+
+
+    dd($result);
+
+
 
        
     }

@@ -38,6 +38,7 @@ class Index extends Controller
 
         }
 
+       //send text
        $result = app('telegram_bot')->sendMessage($text,$chat_id,$reply_to_message);
 
         return response()->json($result,200);
